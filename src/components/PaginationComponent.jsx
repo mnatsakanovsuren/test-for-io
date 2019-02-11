@@ -98,9 +98,9 @@ class Pagination extends React.PureComponent {
         : pageSize * pager.currentPage;
 
     return (
-      <div>
+      <div className="pagination">
         {pager.currentPage !== 1 && (
-          <div onClick={() => this.setPage(pager.currentPage - 1)}>{`<`}</div>
+          <div className="prev" onClick={() => this.setPage(pager.currentPage - 1)}>{`<`}</div>
         )}
         <div>
           {pager.currentPage === 1
@@ -108,7 +108,7 @@ class Pagination extends React.PureComponent {
             : `${firstItem} - ${lastItem}`}
         </div>
         {pager.currentPage !== pager.totalPages && (
-          <div onClick={() => this.setPage(pager.currentPage + 1)}>{`>`}</div>
+          <div className="next" onClick={() => this.setPage(pager.currentPage + 1)}>{`>`}</div>
         )}
       </div>
     );

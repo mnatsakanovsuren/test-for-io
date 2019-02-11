@@ -6,6 +6,7 @@ import UserCard from "./components/UserCard.jsx";
 import Pagination from "./components/PaginationComponent.jsx";
 import _ from "lodash";
 
+
 class App extends Component {
   state = {
     users: [],
@@ -14,6 +15,11 @@ class App extends Component {
     pageIndex: 0,
     medalists: {}
   };
+
+
+  componentWillMount() {
+    console.log('update');
+  }
 
   componentDidMount() {
     const users = _.cloneDeep(UserData).sort((a, b) =>
@@ -40,6 +46,7 @@ class App extends Component {
       pageIndex: pageNumber === 1 ? 0 : (pageNumber - 1) * pageSize
     });
   };
+
   render() {
     const {
       users,
@@ -49,19 +56,21 @@ class App extends Component {
       medalists
     } = this.state;
     return (
-      <div className="App">
+      <div className="UserTable">
         <SearchComponent
           searchValue={searchValue}
           handleSearchChange={this.handleSearchChange}
         />
-        {filteredUsers.map((user, index) => (
-          <UserCard
-            user={user}
-            number={pageIndex + index + 1}
-            key={index}
-            medalists={medalists}
-          />
-        ))}
+        <div className="userList">
+          {filteredUsers.map((user, index) => (
+            <UserCard
+              user={user}
+              number={pageIndex + index + 1}
+              key={index}
+              medalists={medalists}
+            />
+          ))}
+        </div>
         <Pagination
           items={users}
           pageSize={10}

@@ -1,9 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import searchIcon from "../images/search.png"
+
 const SearchComponent = ({ searchValue, handleSearchChange }) => {
   return (
-    <input type="text" value={searchValue} onChange={handleSearchChange} />
+      <div className="users-search">
+          <img src={searchIcon} alt="Search"/>
+          <input
+              type="text"
+              placeholder="Поиск авторов по имени"
+              value={searchValue}
+              onChange={handleSearchChange} />
+      </div>
   );
 };
 
