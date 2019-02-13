@@ -147,7 +147,7 @@ div, p {
 
 .users--views {
   vertical-align: top;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   text-align: right;
   width: 20%;
@@ -183,13 +183,15 @@ div, p {
 .pagination {
   text-align: center;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
+
+
 
 .pagination .next {
   position: absolute;

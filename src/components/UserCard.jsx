@@ -8,7 +8,6 @@ import bronzeMedal from '../images/3rd.svg'
 
 
 
-
 const UserCard = ({
   number,
   user: { name, count_pub, pageviews },

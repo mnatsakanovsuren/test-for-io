@@ -17,7 +17,7 @@ class App extends Component {
   };
 
 
-  componentWillMount() {
+  componentDidUpdate() {
     console.log('update');
   }
 
